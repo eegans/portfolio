@@ -1,0 +1,83 @@
+<!-- <div class="container" *ngIf="loadingImg">
+    <div class="row align-items-center loader">
+      <div class="col-sm-12">
+        <app-loader
+          [isLoading]="loadingImg"
+          message="Loading.."
+          textColor="grey"
+          size="7"
+          strokeWidth="10"
+          class="center"
+        ></app-loader>
+      </div>
+    </div>
+  </div> -->
+  
+  <div class="container-fluid">
+    <main class="row">
+      <section class="homepage">
+        <div class="message-container">
+          <div class="row justify-content-end">
+            <div
+              class="col-lg-auto col-md-auto col-sm-12"
+              data-animation="slide-in-left"
+              data-delay=".5s"
+              style="animation-delay: 0.5s;"
+              [ngClass]="{ fadeInRight: !isLoading, '': isLoading }"
+            >
+              <h1 class="fadeInRight">UX Designer and Developer</h1>
+              <h2 class="show-md show-lg">I design and code beautiful things.</h2>
+              <h2 class="show-sm">I design and code <br />beautiful things.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="ice"></div>
+        <div class="whale"></div>
+  
+        <div class="waveAnimation">
+          <div class="waveWrapperInner bgTop">
+            <div class="waves waveTop"></div>
+          </div>
+          <div class="waveWrapperInner bgMiddle">
+            <div class="waves waveMiddle"></div>
+          </div>
+          <div class="waveWrapperInner bgBottom">
+            <div class="waves waveBottom"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="container-fluid">
+    <section class="desc row justify-content-center accent-bg">
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+        <h3 class="center show-md show-lg">Hi, I'm Emily. Nice to meet you!</h3>
+        <h3 class="center show-sm">
+          Hi, I'm Emily. <br />
+          Nice to meet you!
+        </h3>
+        <p>
+          I'm a UX Designer and Developer currently located in Ohio. I build and design modern responsive websites
+          as well as robust and easy to use web applications. I focus on delivering great user experiences with
+          modern designs all with Accessibility in mind. As a hybrid developer I understand both design and
+          technical aspects, and often provide a needed communication bridge to marketing and product owners. 
+        </p>
+      </div>
+    </section>
+    <section class="desc row justify-content-center white-bg">
+      <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12">
+        <h3 class="center light">Overview</h3>
+        <p class="light">
+          For more than 10 years I've worked within agencies, startups, large corporations, and small companies. Within
+          those companies I've helped a broad range of clients such as GE Aviation, Stack, Audi, Volvo, and
+          Volkswagen to name a few. 
+        </p>
+        <div class="row justify-content-center aside-top">
+          <div class="col-auto">
+            <a routerLink="/resume" mat-stroked-button class="showBut bigBounce btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  

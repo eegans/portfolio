@@ -1,0 +1,38 @@
+/*
+ * Application global variables.
+ */
+
+// Angular Material custom theme
+// See https://material.angular.io/guide/theming for more details.
+//
+// You can also read https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+// for more insight about Angular Material theming.
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+@import "@angular/material/theming";
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+
+$primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
+$accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
+$shades: mat.define-palette(mat.$grey-palette, 50, 900);
+$warn: mat.define-palette(mat.$red-palette);
+
+$angular-default-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $primary,
+      accent: $accent,
+      warn: $warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($angular-default-theme);
+
+

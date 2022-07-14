@@ -1,0 +1,409 @@
+@use "@angular/material" as mat;
+@use "@angular/material/theming";
+
+// ****  General Styles  ****** //
+// *****************************//
+$primary-font: "Open Sans", sans-serif; //Main site font
+$secondary-font: "Roboto Condensed", Helvetica, sans-serif; //Header font
+$special-header: "Open Sans", sans-serif;
+$light-color: #ffffff; //Mainly used for text and form inputs
+$primary: mat.define-palette(mat.$blue-palette, 800, 500, 900);
+$accent: mat.define-palette(mat.$deep-purple-palette, 500, 400, 700);
+
+//Grey shades used throughout
+$grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 900); //Shades of grey. Med, Light, Dark
+
+//Colors for warning, success, error messages
+$success-color: #43a047;
+$warning-color: #e67e22;
+$error-color: #b92933;
+
+// ****  Mixins  ****** //
+// *****************************//
+@mixin headers($color: #fff, $weight: 500, $margin: 10px 0, $padding: 0, $size: 20px) {
+    color: $color;
+    font-weight: $weight;
+    //font-family: $secondary-font, sans-serif;
+    margin: $margin;
+    padding: $padding;
+    font-size: $size;
+  }
+
+  // ****  Extended Groups  ****** //
+// *****************************//
+%top-nav {
+    background-color: $light-color;
+    // color: mat-color($primary, darker);
+    color: #1f92ef;
+    width: 100%;
+    min-height: 64px;
+  }
+  %header-bar {
+    background-color: mat-color($primary);
+    color: $light-color;
+  }
+  %card-base {
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  %btn-base {
+    font-weight: 600;
+    padding: 8px 13px !important;
+    font-size: 18px;
+    font-family: $primary-font;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+
+  %section-container {
+    position: relative;
+    padding: 4%;
+  }
+
+  
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4 {
+  @include headers(mat-color($grey-shades, 800), 700, 10px 0, 0, 20px);
+}
+
+.mat-typography h1,
+.mat-typography h2 {
+  @include headers(mat-color($grey-shades, 800), 700, 10px 0, 0, 30px);
+  font-family: $special-header;
+}
+.mat-typography h3 {
+  @include headers(mat-color($grey-shades, 800), 700, 30px 0, 0, 40px);
+  font-family: $special-header;
+}
+
+.mat-typography h4 {
+  font-family: $primary-font;
+  margin-bottom: 0.125em;
+  font-size: 1.6em;
+  font-weight: 600;
+}
+
+.mat-typography h5 {
+  @include headers(mat-color($grey-shades, 800), 500, 10px 0, 0, 20px);
+}
+
+.mat-typography p,
+.mat-typography ul li {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  font-family: $primary-font;
+}
+
+
+
+// **** Card Sections  *************
+// *******************************
+.mat-card, .mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: rgb(11 43 158 / 15%) 0px 6px 20px -6px;
+  border-radius: 15px;
+}
+
+.about {
+  .mat-card {
+    box-shadow: rgb(11 43 158 / 15%) 0px 6px 20px -6px;
+    border-radius: 15px;
+  }
+
+  .mat-card-avatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+  }
+
+  .mat-card-header .mat-card-title {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 22px;
+    line-height: 1.3em;
+  }
+
+  .mat-card-subtitle {
+    font-size: 16px;
+    color: mat-color($grey-shades, darker);
+    line-height: 1.5em;
+    font-family: "Roboto";
+  }
+
+  .mat-card-header {
+    border-bottom: none;
+  }
+}
+.mat-card-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.portfolio {
+  .mat-card {
+    max-width: 400px;
+    box-shadow: rgb(11 43 158 / 15%) 0px 6px 20px -6px;
+  border-radius: 15px;
+  }
+
+  .mat-card-image {
+    margin-bottom: 0;
+  }
+
+  .mat-icon {
+    line-height: 21px;
+  }
+  .mat-stroked-button {
+    padding-right: 5px;
+  }
+
+  .mat-card-actions {
+    margin: 0px;
+  }
+
+  .mat-card > .mat-card-actions:last-child {
+    margin: 0;
+  }
+}
+
+.mat-card-header span.date {
+  @include headers(mat-color($grey-shades, darker), 500, 0, 0, 14px);
+  display: block;
+  font-family: $primary-font;
+  width: 100%;
+}
+
+.card-section .mat-card {
+  padding: 20px;
+  min-height: 100%;
+}
+.mat-card .mat-card-content {
+  padding: 20px 0px 0px;
+}
+.mat-card h3 {
+  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 2em);
+  font-family: $secondary-font;
+  text-align: left;
+}
+.mat-card h5 {
+  @include headers(mat-color($grey-shades, darker), 500, 10px 0 20px, 0, 1.5em);
+  font-family: $primary-font;
+}
+.mat-card p,
+.mat-card ul li {
+  line-height: 1.4em;
+  font-family: $primary-font;
+  font-size: 1.1em;
+  padding-bottom: 15px;
+}
+
+// **** Cards   *************
+// *******************************
+.card {
+  min-height: 190px;
+}
+.card .mat-card-header-text {
+  margin: 0;
+}
+.card ul li {
+  margin-bottom: 8px;
+}
+.card a {
+  color: mat-color($primary);
+  text-underline-position: under;
+}
+
+// ****  Helper Classes  ****** //
+// *****************************//
+
+//Image Helpers
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.circle {
+  border-radius: 100% !important;
+}
+
+
+.aside-top-xs {
+  margin-top: 1em !important;
+}
+.aside-bottom-xs {
+  margin-bottom: 1em !important;
+}
+.aside-left-xs {
+  margin-left: 1em !important;
+}
+.aside-right-xs {
+  margin-right: 1em !important;
+}
+.aside-top {
+  margin-top: 2em;
+}
+.aside-bottom {
+  margin-bottom: 2em;
+}
+.aside-left {
+  margin-left: 2em !important;
+}
+.aside-right {
+  margin-right: 2em !important;
+}
+.aside-top-x1 {
+  margin-top: 4em !important;
+}
+.aside-bottom-x1 {
+  margin-bottom: 4em !important;
+}
+.aside-left-x1 {
+  margin-left: 4em !important;
+}
+.aside-right-x1 {
+  margin-right: 4em !important;
+}
+.strip {
+  list-style: none;
+  padding-left: 0;
+}
+.no-pad {
+  padding: 0 !important;
+}
+.hide {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}
+.fullHeight {
+  min-height: 100%;
+  //height: calc(100vh - 144px);
+  position: relative;
+  //padding-bottom: 80px;
+}
+.loader {
+  height: 100vh;
+  overflow: hidden;
+}
+
+//Text Helpers
+.text-center,
+.center {
+  text-align: center !important;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-left {
+  text-align: left !important;
+}
+.float-right {
+  float: right;
+}
+.float-left {
+  float: left;
+}
+
+//Color Helpers
+//Font
+.font-white {
+  color: $light-color !important;
+}
+
+//Backgrounds
+.white-bg {
+  background-color: $light-color;
+}
+
+.black-bg {
+  background-color: #000;
+}
+.grey-bg {
+  background-color: mat-color($grey-shades);
+}
+.lt-grey-bg {
+  background-color: mat-color($grey-shades, lighter) !important;
+}
+.primary-bg {
+  //background-color: mat-color($primary, lighter);
+  background-color: #1f92ef;
+}
+.primary-bg-dark {
+  background-color: mat-color($accent);
+}
+.accent-bg {
+  background-color: mat-color($accent, lighter);
+}
+.gradient-bg {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5c6bc0+0,5c6bc0+22,29b6f6+22,29b6f6+45,9ccc65+45,9ccc65+100 */
+  background: #5c6bc0; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    -45deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    135deg,
+    #5c6bc0 0%,
+    #5c6bc0 10%,
+    #29b6f6 10%,
+    #29b6f6 30%,
+    #9ccc65 30%,
+    #9ccc65 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5c6bc0', endColorstr='#9ccc65',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.gradient-bg2 {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0277bd+0,4591bc+28,54a7ce+45,54a7ce+53,54a7ce+60,4591bc+76,0277bd+100 */
+  background: rgb(2, 119, 189); /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    rgba(2, 119, 189, 1) 0%,
+    rgba(69, 145, 188, 1) 28%,
+    rgba(84, 167, 206, 1) 45%,
+    rgba(84, 167, 206, 1) 53%,
+    rgba(84, 167, 206, 1) 60%,
+    rgba(69, 145, 188, 1) 76%,
+    rgba(2, 119, 189, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0277bd', endColorstr='#0277bd', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}

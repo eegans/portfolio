@@ -1,5 +1,5 @@
 # Portfolio
-
+Current repo now exists within [Azure DevOps](https://dev.azure.com/emiegans/_git/UX-Portfolio) to test out DevOps CD/CI and Release Pipelines.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
 
 ## Development server
